@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    
+
     /*slick slider*/
     $('#main_slide').slick({
         slidesToShow: 1,
@@ -16,7 +16,7 @@ $(document).ready(function(){
         centerMode: false,
         focusOnSelect: true
     });
-    
+
 /*    var now = 0;
     var img = 2;
     $('.pol_slide_frame > li').eq(0).siblings().hide();
@@ -50,9 +50,9 @@ $(document).ready(function(){
   }
 
   setInterval(slide, 3000);*/
-    
+
     /*section3 slide*/
-    
+
     $('.slide_btn > li:nth-child(1)').click(function(){
         $('.pol_slide_frame > li:nth-child(1)').fadeIn();
         $('.pol_slide_frame > li:nth-child(2)').hide();
@@ -95,7 +95,7 @@ $(document).ready(function(){
         $('.memo_link > li:nth-child(2)').hide();
         $('.memo_link > li:nth-child(3)').fadeIn();
     });
-    
+
     /*video pop_up*/
     $('.tv').click(function(){
         $('.pop_wrap').css({
@@ -107,20 +107,27 @@ $(document).ready(function(){
             display:"none"
         });
     });
-    
+    $(".close").on("click", function(){
+	   $("iframe")[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
+    });
+
     $(function() { // 보이기 | 숨기기
 	$(window).scroll(function() {
-    if ($(this).scrollTop() > 3500) { //250 넘으면 버튼이 보여짐니다. 
+    if ($(this).scrollTop() > 3500) { //250 넘으면 버튼이 보여짐니다.
       $('.top_btn').fadeIn();
     } else {
       $('.top_btn').fadeOut();
     }
-    }); // 버튼 클릭시 
-    $(".top_btn").click(function() { 
-  	 $('html, body').animate({ scrollTop : 0 // 0 까지 animation 이동합니다. 
-  	 }, 400); // 속도 400 
-  	 return false; 
-    }); 
-});
+    }); // 버튼 클릭시
+    $(".top_btn").click(function() {
+  	 $('html, body').animate({ scrollTop : 0 // 0 까지 animation 이동합니다.
+  	 }, 400); // 속도 400
+  	 return false;
+    });
     
+});
+    $('.menu-trigger').click(function(){
+          $(this).toggleClass('active');
+            $('.m_menu').slideToggle(400);
+        });
 });
