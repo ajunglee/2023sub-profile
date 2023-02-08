@@ -6,7 +6,7 @@
 ul,li{list-style: none;}
 a{text-decoration: none;display: inline-block;color: #000;}
 img{border: 0;}
-body{font-family: "Inter";background: url(img/illust/sub_bg.png);text-align: center;}
+body{font-family: "Inter";background: url(../img/illust/sub_bg.png);text-align: center;}
 
 /*scroll bar*/
 body::-webkit-scrollbar {width: 5px;  /* 스크롤바의 너비 */}
@@ -27,20 +27,23 @@ header>.sub_menu_wrap>.menu_bar>li>.sub_menu>li>a:hover{border-bottom: 1px solid
 header>.sub_menu_wrap>.menu_bar>li:nth-child(5)>a:hover ~ .sub_menu{display: block;}
 header>.sub_menu_wrap>.menu_bar>li>.sub_menu:hover{display: block;}
 
-
+section{height: auto;min-height: 100%;padding-bottom: 100px;}
 section>.contents{width: 1200px;height: 100%; display: inline-block;}
 section>.contents>.sub_title{font-family: 'Birthstone', cursive;font-size: 80px;font-weight: 400;margin-top: 50px;}
 section>.contents>.location{margin: 20px 0 100px 0;}
 section>.contents>.location>div{display: inline-block;font-size: 15px;}
 section>.contents>.location>.location_home>a{color: #a8a8a8;}
-section>.contents>.location>.location_arrow{width: 10px; height: 10px;background: url(img/illust/location_arrow.png) no-repeat;background-size: contain;background-position: center;}
+section>.contents>.location>.location_arrow{width: 10px; height: 10px;background: url(../img/illust/location_arrow.png) no-repeat;background-size: contain;background-position: center;}
+
+/*profile_content*/
 
 section>.contents>.profile_content{width: 100%;height: 780px;position: relative;}
-section>.contents>.profile_content>.profile_img{width: 600px;height: 780px;background:url(img/photo/sub_profile_img.png) no-repeat;background-size: cover;float: left;}
-section>.contents>.profile_content>p{width: 600px;font-family: "Cafe24Oneprettynight";float: left;text-align: justify;font-size: 30px;line-height: 1.5;}
+section>.contents>.profile_content>.profile_img{width: 600px;height: 780px;background:url(../img/photo/sub_profile_img.png) no-repeat;background-size: cover;float: left;}
+section>.contents>.profile_content>p{width: 600px;float: left;}
 section>.contents>.profile_content>p:nth-child(2){padding-left: 50px;box-sizing: border-box;}
-section>.contents>.profile_content>p>.profile_que{font-size: 50px;color: #677424;font-family: "Cafe24Oneprettynight";}
 
+.font_style{font-family: "Cafe24Oneprettynight";font-size: 30px;line-height: 1.5;text-align: justify;}
+.profile_que{font-size: 50px;color: #677424;font-family: "Cafe24Oneprettynight";}
 .txt_green{color:#677424;}
 .cursive{font-family: 'Birthstone', cursive;font-size: 50px;}
 
@@ -48,9 +51,61 @@ section>.contents>.profile_content:nth-child(3)>p>.cursive{position: absolute;bo
 section>.contents>.profile_content:nth-child(4){height: 100%;}
 section>.contents>.profile_content:nth-child(4)>p{width: 100%;margin: 50px 0;}
 
+/*profile_content end*/
 
+/*web_content*/
+section>.contents>.web_cont{width: 100%;margin-bottom: 50px;}
+section>.contents>.web_cont>div{width: 50%;margin-bottom: 100px; float: left;}
+section>.contents>.web_cont>.web_img{position: relative;}
+section>.contents>.web_cont>.web_img>img{width: 100%;box-shadow: 0px 0px 5px #a8a8a8;}
+section>.contents>.web_cont>.web_img::before{content: '';background: url(../img/illust/sub_web_masking.png) no-repeat;background-size: cover;background-size: cover;width: 280px;height: 75px;position: absolute;top: -60px;left: 130px;transform: rotate(351deg);}
+section>.contents>.web_cont>.web_txt>p{padding-left: 50px;height: 340px;}
 
+/*web_content end*/
 
+/*history_content*/
+section>.contents>.hist_contents{width: 100%;}
+section>.contents>.hist_contents>.gallery{display: inline-block;}
+section>.contents>.hist_contents>.gallery>li{width: 232px; float: left;margin-right: 10px;margin-bottom: 10px;border-radius: 10px;overflow: hidden;border: 1px solid #a8a8a8;box-sizing: border-box;}
+section>.contents>.hist_contents>.gallery>li:nth-child(5n){margin-right: 0;}
+section>.contents>.hist_contents>.gallery>li>.gallery_img{width: 100%;height: 232px;overflow: hidden;display: flex;
+    justify-content: center;position: relative;}
+section>.contents>.hist_contents>.gallery>li>.gallery_img::before{content: '';width: 232px;height: 232px;background: url(../img/illust/history_h.png);position: absolute;top: 0;left: 0;display: none;}
+section>.contents>.hist_contents>.gallery>li>.gallery_img:hover::before{display: block;}
+section>.contents>.hist_contents>.gallery>li>.gallery_img>img{width: 100%; height: 100%; object-fit: cover;}
+section>.contents>.hist_contents>.gallery>li>.gallery_cont{width:100%;padding: 10px 0;background: #fff;border-top: 1px solid #a8a8a8;}
+section>.contents>.hist_contents>.gallery>li>.gallery_cont>.g_tit{font-size: 20px;font-family: "Cafe24Oneprettynight";}
+section>.contents>.hist_contents>.gallery>li>.gallery_cont>.g_sub{font-size: 10px;color: #a8a8a8;font-family: "Inter";margin-top: 5px;}
 
-footer{ width: 100%;height: 100px;background: #000;text-align: c
-;color: #a8a8a8;line-height: 100px;}
+/*history_content end*/
+
+/*video_content*/
+section>.contents>.video_capture{width: 100%;}
+section>.contents>.video_capture>img{width: 100%;}
+section>.contents>.video_txt{margin-bottom: 100px;}
+section>.contents>.video_txt>.font_style{margin-top: 50px;}
+
+footer{ width: 100%;height: 100px;background: #000;text-align: center;color: #a8a8a8;line-height: 100px;position: relative;}
+
+@media all and (max-width:759px){
+    html, body {max-width: 100%;overflow-x: hidden;}
+    header>.sub_menu_wrap>.menu_bar>li>a{width: 97px;}
+    header>.sub_menu_wrap>.menu_bar>li>.sub_menu{width: 97px;}
+    
+    section>.contents{width: 100%;}
+    section>.contents>.profile_content>p:nth-child(2){padding-left: 0;padding: 20px;}
+    section>.contents>.profile_content>.profile_img{width: 100%;}
+    section>.contents>.profile_content>p{width: 100%;}
+    section>.contents>.profile_content:nth-child(4)>p{padding: 20px;box-sizing: border-box;margin: 0;}
+    
+    section>.contents>.web_cont>div{width: 100%;margin-bottom: 0;}
+    section>.contents>.web_cont>.web_img::before{width: 220px;
+    height: 59px;top: -40px;}
+    section>.contents>.web_cont>.web_txt>p{padding-left: 0;padding: 20px;height: auto;}
+    .profile_que{font-size: 40px;}
+    section>.contents>.video_txt>.font_style{padding: 20px;}
+    
+    section>.contents>.hist_contents>.gallery>li:nth-child(2n){margin-right: 0;}
+    section>.contents>.hist_contents>.gallery>li:nth-child(5n){margin-right: 10px;}
+    section>.contents>.hist_contents>.gallery>li:nth-child(2n+1){margin-left: 10px;}
+}
